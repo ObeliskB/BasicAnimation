@@ -12,7 +12,6 @@ public class DoorInteraction : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log("Door Interacted");
         if (!opened) anim.SetTrigger("Open");
         else anim.SetTrigger("Close");
         opened = !opened;
