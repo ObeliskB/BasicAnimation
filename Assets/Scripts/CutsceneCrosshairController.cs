@@ -3,8 +3,8 @@ using UnityEngine.Playables;
 
 public class CutsceneController : MonoBehaviour
 {
-    [SerializeField] private PlayableDirector director;
-    [SerializeField] private GameObject canvas;
+    [SerializeField] PlayableDirector director;
+    [SerializeField] GameObject canvas;
 
     private void Awake()
     {
@@ -27,15 +27,8 @@ public class CutsceneController : MonoBehaviour
         }
     }
 
-    /*public void PlayCutscene()
-    {
-        if (canvas != null) canvas.SetActive(false);
-        director.Play();
-    }*/
-
     private void OnCutsceneFinished(PlayableDirector pd)
     {
-        // เมื่อ Timeline จบ ให้เปิด UI Canvas กลับมา
         if (canvas != null)
         {
             canvas.SetActive(true);
